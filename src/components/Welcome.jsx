@@ -1,6 +1,6 @@
 import { useRef } from "react";
 import {useGSAP} from "@gsap/react"
-import { gsap } from "gsap";
+import  gsap  from "gsap";
 
 const FONT_WEIGHTS = {
   subtitle: { min: 100, max: 400, default: 100 },
