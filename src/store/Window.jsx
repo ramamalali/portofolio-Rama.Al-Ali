@@ -9,11 +9,10 @@ const useWindowStore = create(
     nextZIndex: INITIAL_Z_INDEX + 1,
 
     openWindow: (windowKey, data = null) =>
-     
       set((state) => {
         const win = state.windows[windowKey];
         win.isOpen = true;
-        win.zIndex =  state.nextZIndex ;
+        win.zIndex = state.nextZIndex;
         win.data = data ?? win.data;
         state.nextZIndex++;
       }),
@@ -29,7 +28,7 @@ const useWindowStore = create(
     focusWindow: (windowKey) =>
       set((state) => {
         const win = state.windows[windowKey];
-        win.zIndex = state.nextZIndex ++;
+        win.zIndex = state.nextZIndex++;
       }),
   }))
 );
