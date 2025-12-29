@@ -20,18 +20,22 @@ const navIcons = [
   {
     id: 1,
     img: "/icons/wifi.svg",
+    type :"wifi"
   },
   {
     id: 2,
     img: "/icons/search.svg",
+    type :"search"
   },
   {
     id: 3,
     img: "/icons/user.svg",
+    type :"user"
   },
   {
     id: 4,
     img: "/icons/mode.svg",
+    type :"mode"
   },
 ];
 
@@ -70,7 +74,7 @@ const dockApps = [
     id: "trash",
     name: "Archive", // was "Trash"
     icon: "images/trash.png",
-    canOpen: false,
+    canOpen:true ,
   },
 ];
 
@@ -157,52 +161,87 @@ const socials = [
   },
 ];
 
-const photosLinks = [
-  {
-    id: 1,
-    icon: "/icons/gicon1.svg",
-    title: "Library",
-  },
-  {
-    id: 2,
-    icon: "/icons/gicon2.svg",
-    title: "Memories",
-  },
-  {
-    id: 3,
-    icon: "/icons/file.svg",
-    title: "Places",
-  },
-  {
-    id: 4,
-    icon: "/icons/gicon4.svg",
-    title: "People",
-  },
-  {
-    id: 5,
-    icon: "/icons/gicon5.svg",
-    title: "Favorites",
-  },
-];
 
-const gallery = [
-  {
-    id: 1,
-    img: "/images/gal1.png",
-  },
-  {
-    id: 2,
-    img: "/images/gal2.png",
-  },
-  {
-    id: 3,
-    img: "/images/gal3.png",
-  },
-  {
-    id: 4,
-    img: "/images/gal4.png",
-  },
-];
+
+
+// Library
+ const PHOTOS_LIBRARY = {
+  id: 1,
+  icon: "/icons/gicon1.svg",
+  title: "Library",
+  children: [
+    { id: 1,fileType: "img", imageUrl: "/images/gal1.png" },
+    { id: 2,fileType: "img", imageUrl: "/images/gal2.png" },
+    { id: 3,fileType: "img", imageUrl: "/images/gal3.png" },
+    { id: 4,fileType: "img", imageUrl: "/images/gal4.png" },
+  ],
+};
+
+// Memories
+ const PHOTOS_MEMORIES = {
+  id: 2,
+  icon: "/icons/gicon2.svg",
+  title: "Memories",
+  children: [
+    { id: 1,fileType: "img", imageUrl: "/images/gal1.png" },
+    { id: 2,fileType: "img", imageUrl: "/images/gal2.png" },
+    { id: 3,fileType: "img", imageUrl: "/images/gal3.png" },
+    { id: 4,fileType: "img", imageUrl: "/images/gal4.png" },
+  ],
+};
+
+// Places
+ const PHOTOS_PLACES = {
+  id: 3,
+  icon: "/icons/file.svg",
+  title: "Places",
+  children: [
+    { id: 1,fileType: "img", imageUrl: "/images/gal2.png" },
+    { id: 2,fileType: "img", imageUrl: "/images/gal4.png" },
+    { id: 3,fileType: "img", imageUrl: "/images/gal1.png" },
+    { id: 4,fileType: "img", imageUrl: "/images/gal3.png" },
+  ],
+};
+
+// People
+ const  PHOTOS_PEOPLE = {
+  id: 4,
+  icon: "/icons/gicon4.svg",
+  title: "People",
+  children: [
+    { id: 1,fileType: "img", imageUrl: "/images/gal1.png" },
+    { id: 2,fileType: "img", imageUrl: "/images/gal2.png" },
+    { id: 3,fileType: "img", imageUrl: "/images/gal3.png" },
+    { id: 4,fileType: "img", imageUrl: "/images/gal4.png" },
+  ],
+};
+
+// Favorites
+ const PHOTOS_FAVORITES = {
+  id: 5,
+  icon: "/icons/gicon5.svg",
+  title: "Favorites",
+  children: [
+    { id: 1,fileType: "img", imageUrl: "/images/gal1.png" },
+    { id: 2,fileType: "img", imageUrl: "/images/gal2.png" },
+    { id: 3,fileType: "img", imageUrl: "/images/gal3.png" },
+    { id: 4,fileType: "img", imageUrl: "/images/gal4.png" },
+  ],
+};
+
+
+
+
+
+export const photosLinks = {
+  Library : PHOTOS_LIBRARY,
+   Memories : PHOTOS_MEMORIES,
+  Places : PHOTOS_PLACES,
+ People : PHOTOS_PEOPLE,
+ Favorites : PHOTOS_FAVORITES,
+};
+
+
 
 export {
   navLinks,
@@ -211,8 +250,7 @@ export {
   blogPosts,
   techStack,
   socials,
-  photosLinks,
-  gallery,
+  PHOTOS_LIBRARY, PHOTOS_MEMORIES, PHOTOS_PLACES, PHOTOS_PEOPLE, PHOTOS_FAVORITES
 };
 
 const WORK_LOCATION = {
@@ -499,6 +537,7 @@ const WINDOW_CONFIG = {
   safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  trash: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
   imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
 };

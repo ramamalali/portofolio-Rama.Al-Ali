@@ -1,9 +1,10 @@
 import "./App.css";
-import { Navbar, Welcome, Dock } from "#components";
+import { Navbar, Welcome, Dock , Home , ControlCenter } from "#components";
+import { Terminal, Safari, Resume, Finder , Text , ImageWindowContent , Contact , Trash , Photos } from "#Windows";
+
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 gsap.registerPlugin(Draggable);
-import { Terminal, Safari, Resume, Finder , Text , ImageWindowContent , Contact} from "#Windows";
 
 const App = () => {
   return (
@@ -12,6 +13,7 @@ const App = () => {
         <Navbar />
         <Welcome />
         <Dock />
+        <ControlCenter />
 
         <Terminal />
         <Safari />
@@ -20,6 +22,9 @@ const App = () => {
         <Text />
         <ImageWindowContent />
         <Contact />
+        <Home />
+        <Trash />
+        <Photos />
       </main>
     </>
   );
