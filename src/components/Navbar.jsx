@@ -5,7 +5,7 @@ import {useControlStore} from "#store/ControlStore";
 
 const Navbar = () => {
   const { openWindow  } = useWindowStore();
-  const { toggleOpen  } = useControlStore();
+  const { toggleOpen , wifi } = useControlStore();
   return (
     <>
       <nav>
@@ -15,7 +15,7 @@ const Navbar = () => {
 
           <ul>
             {navLinks.map(({ id, name , type }) => (
-              <li key={id} onClick={() => openWindow(type)} >
+              <li key={id} className="cursor-pointer" onClick={() => openWindow(type)} >
                 {name}
               </li>
             ))}
@@ -23,7 +23,7 @@ const Navbar = () => {
         </div>
         <div>
           <ul>
-            {navIcons.map(({ id, img  }) => (
+            {navIcons.map(({ id, icon : Icon , type }) => (
               <li key={id} className="cursor-pointer" onClick={() => {
                 if (type === "mode") {
                   toggleOpen();
@@ -31,7 +31,13 @@ const Navbar = () => {
                   console.log(`Icon ${type} clicked`);
                 }
               }} >
-                <img src={img} className="icon-hover" alt={`icon-${id}`} />
+              <Icon 
+      className={
+        type === "wifi" && wifi === true
+          ? "icon-hover text-sky-400"
+          : "icon-hover"}
+          
+        />
               </li>
             ))}
           </ul>

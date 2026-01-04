@@ -6,6 +6,7 @@ import useWindowStore from "#store/Window";
 import useLocationStore from "#store/Location";
 
 
+
 const projects = locations.work?.children ?? []
 
 const Home =() =>{

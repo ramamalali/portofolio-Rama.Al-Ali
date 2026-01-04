@@ -6,4 +6,5 @@ import Home from "#components/Home";
 import ControlCenter from "#components/ControlCenter";
 
 
-export { Navbar, Welcome, Dock, WindowControlls , Home , ControlCenter  };
+
+export { Navbar, Welcome, Dock, WindowControlls , Home , ControlCenter };

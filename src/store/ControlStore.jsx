@@ -1,29 +1,33 @@
-
-import { create } from 'zustand';
+import { create } from "zustand";
 
 export const useControlStore = create((set) => ({
-  wifi: true,
+  wifi: false,
   bluetooth: false,
-  volume: 50,
-  brightness: 70,
-  language: 'En',
-  theme: 'light',
+  airDrop: false,
+  theme: localStorage.getItem("theme") || "light", 
+  display: 70,
+  sound: 50,
+  language: localStorage.getItem("language") || "en",
   isOpen: false,
 
   toggleWifi: () => set((state) => ({ wifi: !state.wifi })),
 
   toggleBluetooth: () => set((state) => ({ bluetooth: !state.bluetooth })),
 
-  setVolume: (value) => set({ volume: value }),
+  toggleAirDrop: () => set((state) => ({ airDrop: !state.airDrop })),
 
-  setBrightness: (value) => set({ brightness: value }),
+  toggleTheme: () => set((state) => { const newTheme = state.theme === "light" ? "dark" : "light"; localStorage.setItem("theme", newTheme); return { theme: newTheme }; }),
+ 
 
-  toggleLanguage: () =>
-    set((state) => ({ language: state.language === 'En' ? 'Ar' : 'En' })),
+  setSound: (value) => set({ sound: value }),
 
-  toggleTheme: () =>
-    set((state) => ({ theme: state.theme === 'light' ? 'dark' : 'light' })),
+  setDisplay: (value) => set({ display: value }),
+
+  setLanguage: (lang) => {
+    localStorage.setItem("language", lang);
+    set({ language: lang });
+  },
+  
 
   toggleOpen: () => set((state) => ({ isOpen: !state.isOpen })),
-
 }));

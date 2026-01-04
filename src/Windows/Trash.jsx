@@ -41,7 +41,7 @@ const Trash = () => {
         <h2>Trash</h2>
       </div>
 
-      <ul className=" flex p-10 space-y-10 bg-white ">
+      <ul className=" flex p-10 space-y-10  ">
         {locations.trash.children.map((item) => (
           <li
             key={item.id}

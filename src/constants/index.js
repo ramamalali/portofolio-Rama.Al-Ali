@@ -1,3 +1,6 @@
+import { Wifi, Bluetooth, House, Sun, Moon, Keyboard, Airplay, ChevronDown , CircleUser , Search , Settings2} from "lucide-react";
+
+
 const navLinks = [
   {
     id: 1,
@@ -19,22 +22,22 @@ const navLinks = [
 const navIcons = [
   {
     id: 1,
-    img: "/icons/wifi.svg",
+    icon: Wifi,
     type :"wifi"
   },
   {
     id: 2,
-    img: "/icons/search.svg",
+    icon: Search,
     type :"search"
   },
   {
     id: 3,
-    img: "/icons/user.svg",
+    icon: CircleUser,
     type :"user"
   },
   {
     id: 4,
-    img: "/icons/mode.svg",
+    icon: Settings2,
     type :"mode"
   },
 ];
@@ -266,8 +269,8 @@ const WORK_LOCATION = {
       name: "Nike Ecommerce Website Application",
       icon: "/images/folder.png",
       kind: "folder",
-      position: "top-10 left-5", // icon position inside Finder
-      windowPosition: "top-[5vh] left-5", // optional: Finder window position
+      position: "top-15 left-7", // icon position inside Finder
+      windowPosition: "top-[45px] left-7", // optional: Finder window position
       children: [
         {
           id: 1,
@@ -320,7 +323,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-52 right-80",
-      windowPosition: "top-[20vh] left-7",
+      windowPosition: "top-[158px] left-9",
       children: [
         {
           id: 1,
@@ -373,7 +376,7 @@ const WORK_LOCATION = {
       icon: "/images/folder.png",
       kind: "folder",
       position: "top-10 left-80",
-      windowPosition: "top-[33vh] left-7",
+      windowPosition: "top-[265px] left-9 ",
       children: [
         {
           id: 1,
@@ -487,8 +490,7 @@ const RESUME_LOCATION = {
       icon: "/images/pdf.png",
       kind: "file",
       fileType: "pdf",
-      // you can add href if you want to open a hosted resume
-      // href: "/your/resume/path.pdf",
+
     },
   ],
 };

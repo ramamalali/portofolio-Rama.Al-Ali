@@ -5,6 +5,7 @@ import { dockApps } from "#constants/index.js";
 import { Tooltip } from "react-tooltip";
 import useWindowStore from "#store/Window.jsx";
 
+
 const Dock = () => {
   const dockRef = useRef(null);
 
