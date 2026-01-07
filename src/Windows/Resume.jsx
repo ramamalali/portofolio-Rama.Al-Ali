@@ -4,15 +4,17 @@ import { Download } from "lucide-react";
 import { pdfjs, Document, Page } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
+import { useTranslation } from "react-i18next";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const Resume = () => {
+  const {t} = useTranslation();
   return (
     <>
       <div id="window-header">
         <WindowControlls target="resume" />
-        <h2>Resume.pdf</h2>
+        <h2>{t("Resume")}</h2>
 
         <a
           href="files/resume.pdf"

@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import {useGSAP} from "@gsap/react"
 import  gsap  from "gsap";
+import { useTranslation } from "react-i18next";
 
 const FONT_WEIGHTS = {
   subtitle: { min: 100, max: 400, default: 100 },
@@ -56,6 +57,7 @@ return () =>{
 
 
 const Welcome = () => {
+  const {t} = useTranslation();
   const titleRef = useRef(null);
   const subtitleRef = useRef(null);
 
@@ -81,7 +83,7 @@ const Welcome = () => {
       </h1>
 
       <div className="small-screen">
-        <p>This Portfolio is Designed for desktop/tablet screen only.</p>
+        <p>{t("This Portfolio is Designed for desktop/tablet screen only.")}</p>
       </div>
     </section>
   );

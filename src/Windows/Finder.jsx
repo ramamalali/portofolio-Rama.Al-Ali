@@ -5,9 +5,10 @@ import { locations } from "#constants";
 import useLocationStore from "#store/Location";
 import clsx from "clsx";
 import useWindowStore from "#store/Window";
+import { useTranslation } from "react-i18next";
 
 const Finder = () => {
-
+  const {t} = useTranslation();
   const { activeLocation, setActionLocation } = useLocationStore();
   const { openWindow } = useWindowStore();
 
@@ -58,7 +59,7 @@ const openItem = (item) => {
             )}
           >
             <img src={item.icon} className="w-4" alt={item.name} />
-            <p className="text-sm font-medium truncate">{item.name}</p>
+            <p className="text-sm font-medium truncate">{t(item.name)}</p>
           </li>
         ))}
       </ul>
@@ -73,8 +74,8 @@ const openItem = (item) => {
 
       <div className="bg-white flex h-full">
         <div className="sidebar">
-          {renderList("Favorites", Object.values(locations))}
-          {renderList("My Projects", locations.work.children)}
+          {renderList(t("Favorites"), Object.values(locations))}
+          {renderList(t("My Projects"), locations.work.children)}
         </div>
 
         <ul className="content">
@@ -85,7 +86,7 @@ const openItem = (item) => {
               onClick={() => openItem(item)}
             >
               <img src={item.icon} alt={item.name} />
-              <p>{item.name}</p>
+              <p>{t(item.name)}</p>
             </li>
           ))}
         </ul>

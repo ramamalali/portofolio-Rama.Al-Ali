@@ -2,21 +2,23 @@ import dayjs from "dayjs";
 import { navLinks, navIcons } from "#constants/index.js";
 import useWindowStore from "#store/Window.jsx";
 import {useControlStore} from "#store/ControlStore";
+import { useTranslation } from "react-i18next";
 
 const Navbar = () => {
+  const {t} = useTranslation();
   const { openWindow  } = useWindowStore();
-  const { toggleOpen , wifi } = useControlStore();
+  const { toggleOpen , wifi  } = useControlStore();
   return (
     <>
-      <nav>
+      <nav >
         <div>
           <img src="/images/logo.svg" alt="logo" />
-          <p className="font-bold">Rama's Portfolio</p>
+          <p className="font-bold">{t("Rama's Portfolio")}</p>
 
           <ul>
-            {navLinks.map(({ id, name , type }) => (
+            {navLinks.map(({ id, nameKey , type }) => (
               <li key={id} className="cursor-pointer" onClick={() => openWindow(type)} >
-                {name}
+                {t(nameKey)}
               </li>
             ))}
           </ul>

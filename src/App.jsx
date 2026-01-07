@@ -19,15 +19,17 @@ import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 gsap.registerPlugin(Draggable);
 
+
+
 const App = () => {
-  const { theme } = useControlStore();
+  const { theme , language } = useControlStore();
 
 
 
 
   return (
     <>
-    <div className={theme === "dark" ? "dark" : ""}>
+    <div className={theme === "dark" ? "dark" : ""} dir={language === "ar" ? "rtl" : "ltr"}>
       <main className="min-h-screen dark:bg-gray-900 dark:text-white">
         <Navbar />
         <Welcome />

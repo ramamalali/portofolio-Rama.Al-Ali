@@ -4,11 +4,12 @@ import gsap from "gsap";
 import { dockApps } from "#constants/index.js";
 import { Tooltip } from "react-tooltip";
 import useWindowStore from "#store/Window.jsx";
+import { useTranslation } from "react-i18next";
 
 
 const Dock = () => {
   const dockRef = useRef(null);
-
+  const {t} = useTranslation();
   const { openWindow, closeWindow, focusWindow, windows } = useWindowStore();
 
   const toggleApp = (app) => {
@@ -80,15 +81,15 @@ const Dock = () => {
             <button
               type="button"
               className="dock-icon"
-              aria-label={name}
+              aria-label={t(name)}
               data-tooltip-id="dock-tooltip"
-              data-tooltip-content={name}
+              data-tooltip-content={t(name)}
               data-tooltip-delay-show={150}
               onClick={() => toggleApp({ id, canOpen })}
             >
               <img
                 src={icon}
-                alt={name}
+                alt={t(name)}
                 loading="lazy"
                 className={canOpen ? "" : "opacity-60"}
               />

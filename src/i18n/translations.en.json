@@ -1,0 +1,110 @@
+
+{
+  "This Portfolio is Designed for desktop/tablet screen only." : "This Portfolio is Designed for desktop/tablet screen only.",
+
+"Rama's Portfolio" : "Rama's Portfolio",
+    "nav": {
+        "Projects": "Projects",
+        "Contact": "Contact",
+        "Resume": "Resume"
+      },
+
+      "dock" :{
+        "Portfolio" : "Portfolio",
+        "Articles" : "Articles" ,
+        "Gallery" : "Gallery" ,
+        "Contact" : "Contact" ,
+        "Skills" :"Skills" ,
+        "Archive" : "Archive"
+      },
+      "Search or Enter website Name" : "Search or Enter website Name" ,
+      "My Developer Blog" : "My Developer Blog",
+      "Check out the full post" : "Check out the full post",
+
+        "blog.ts": "TypeScript Explained: What It Is, Why It Matters, and How to Master It",
+        "blog.threejs": "The Ultimate Guide to Mastering Three.js for 3D Development",
+        "blog.gsap": "The Ultimate Guide to Mastering GSAP Animations"
+      ,
+      "tech stack" : "tech stack" ,
+      "Rama %" : "Rama %",
+      "show tech stack" :"show tech stack" ,
+      "Category" : "Category",
+      "Technologies" : "Technologies",
+      "5 of 5 stacks loaded successfully (100%)" : "5 of 5 stacks loaded successfully (100%)",
+      "Render time : 6ms" : "Render time : 6ms",
+      
+      "tech" :{
+          "Frontend" : "Frontend" ,
+          "Mobile" : "Mobile" ,
+          "Styling" : "Styling" ,
+          "Backend" : "Backend" ,
+          "Database" : "Database" ,
+          "Dev Tools" : "Dev Tools"
+      },
+      "Contact" : "Contact",
+      "Let's connect" : "Let's connect",
+      "Got an idea? A bug to squash? or just wanna talk tech? I'm in." : "Got an idea? A bug to squash? or just wanna talk tech? I'm in.",
+      "social":{
+        "Github": "Github",
+        "Platform" : "Platform",
+        "Twitter/X" : "Twitter/X",
+        "LinkedIn" : "LinkedIn"
+      },
+      "Photos" : "Photos",
+      "photos" : {
+     "Library" : "Library",
+     "Memories" : "Memories" ,
+     "Places" : "Places" ,
+     "People" : "People",
+     "Favorites" : "Favorites"
+      },
+        "work": "Work",
+        "About me" :  "About me",
+        "Resume" : "Resume",
+        "Trash" : "Trash" ,
+        "favorites": "Favorites",
+        "myProjects": "My Projects",
+      
+        "nikeProject": "Nike Ecommerce Website Application",
+        "nikeProjectTxt": "Nike Project.txt",
+        "nikeUrl": "nike.com",
+        "nikeImage": "Nike Image",
+        "nikeDesign": "Design.fig",
+        "nike.desc1": "The Nike eCommerce website is a sleek and modern platform designed for shopping the latest Nike collections.",
+        "nike.desc2": "Instead of a simple online store, it delivers an immersive experience with bold visuals, interactive product displays, and smooth navigation.",
+        "nike.desc3": "Think of it like walking into a flagship Nike store—but right from your phone or laptop.",
+        "nike.desc4": "It's built with Next.js and Tailwind, ensuring fast performance, responsive design, and a clean, premium look.",
+      
+        "aiResumeAnalyzer": "AI Resume Analyzer",
+        "aiResumeAnalyzerTxt": "AI Resume Analyzer Project.txt",
+        "aiResumeUrl": "ai-resume-analyzer.com",
+        "aiResumeImage": "AI Resume Analyzer Image",
+        "aiResumeDesign": "Design.fig",
+        "aiResume.desc1": "AI Resume Analyzer is a smart tool that helps you perfect your resume with instant feedback.",
+        "aiResume.desc2": "Instead of guessing what recruiters want, you get AI-powered insights on keywords, formatting, and overall impact.",
+        "aiResume.desc3": "Think of it like having a career coach—pointing out strengths, fixing weaknesses, and boosting your chances of landing interviews.",
+        "aiResume.desc4": "It's built with Next.js and Tailwind, so it runs fast, looks professional, and works seamlessly on any device.",
+      
+        "foodDeliveryApp": "Food Delivery App",
+        "foodDeliveryAppTxt": "Food Delivery App Project.txt",
+        "foodDeliveryUrl": "food-delivery-app.com",
+        "foodDeliveryImage": "Food Delivery App Image",
+        "foodDeliveryDesign": "Design.fig",
+        "food.desc1": "Our Food Delivery App is a fast and convenient way to order meals from your favorite restaurants.",
+        "food.desc2": "Instead of making calls or waiting in line, you can browse menus, customize orders, and track deliveries in real time.",
+        "food.desc3": "Think of it like having your favorite restaurants in your pocket—ready to deliver anytime, anywhere.",
+        "food.desc4": "It’s built with React Native, so it works smoothly on both iOS and Android with a clean, modern design."
+
+      
+,
+"about.desc1" : "Hey! I’m Adrian 👋, a web developer who enjoys building sleek, interactive websites that actually work well.",
+"about.desc2" :"I specialize in JavaScript, React, and Next.js—and I love making things feel smooth, fast, and just a little bit delightful." ,
+"about.desc3" : "I’m big on clean UI, good UX, and writing code that doesn’t need a search party to debug.",
+"about.desc4" : "Outside of dev work, you'll find me tweaking layouts at 2AM, sipping overpriced coffee, or impulse-buying gadgets I absolutely convinced myself I needed 😅"
+      
+
+
+
+
+
+}

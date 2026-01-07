@@ -4,13 +4,14 @@ import { Draggable } from "gsap/Draggable";
 import clsx from "clsx";
 import useWindowStore from "#store/Window";
 import useLocationStore from "#store/Location";
+import { useTranslation } from "react-i18next";
 
 
 
 const projects = locations.work?.children ?? []
 
 const Home =() =>{
-
+ const {t} = useTranslation();
 const {  setActionLocation } = useLocationStore();
 const {openWindow} = useWindowStore();
 
@@ -30,7 +31,7 @@ const handleOpenProjectFinder = (project) =>{
                 {projects.map((project) =>(
                     <li key={project.id} className={clsx("group folder" , project.windowPosition)} onClick={() => handleOpenProjectFinder(project)}>
                         <img src="/images/folder.png" alt={project.name} />
-                        <p>{project.name}</p>
+                        <p>{t(project.name)}</p>
                     </li>
                 ))}
             </ul>

@@ -1,11 +1,12 @@
 import WindowWrapper from "#hoc/WindowWrapper.jsx";
 import {WindowControlls} from "#components";
 import useWindowStore from "#store/Window.jsx";
+import { useTranslation } from "react-i18next";
 
 const Text = () =>{
+    const {t} = useTranslation();
     const {windows} = useWindowStore();
     const data = windows.txtfile?.data;
-
     if(!data) return null;
 
     const {name , image , subtitle , description} = data;
@@ -13,7 +14,7 @@ const Text = () =>{
         <>
    <div id="window-header">
     <WindowControlls  target="txtfile"/>
-    <h2>{name}</h2>
+    <h2>{t(name)}</h2>
    </div>
 
    <div className="p-5 space-y-6 bg-white">
@@ -24,12 +25,12 @@ const Text = () =>{
     ): null}
 
 
-{subtitle ? <h3 className="text-lg font-semiblod">{subtitle}</h3> : null}
+{subtitle ? <h3 className="text-lg font-semiblod">{t(subtitle)}</h3> : null}
 
 {Array.isArray(description) && description.length > 0 ? (
     <div className="space-y-3 leading-relaxed text-base text-gray-800">
         {description.map((para , idx) => (
-            <p key={idx}>{para}</p>
+            <p key={idx}>{t(para)}</p>
         ))}
         </div>
 

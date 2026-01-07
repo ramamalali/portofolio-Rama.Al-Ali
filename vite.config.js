@@ -23,6 +23,11 @@ export default defineConfig({
         dirname(fileURLToPath(import.meta.url)),
         "src/Windows"
       ),
+      "#hoc": resolve(dirname(fileURLToPath(import.meta.url)), "src/hoc"),
+      "#i18n": resolve(
+        dirname(fileURLToPath(import.meta.url)),
+        "src/i18n"
+      ),
     },
   },
 });

@@ -1,4 +1,6 @@
 import { create } from "zustand";
+import i18n from "#i18n/i18n";
+
 
 export const useControlStore = create((set) => ({
   wifi: false,
@@ -23,10 +25,9 @@ export const useControlStore = create((set) => ({
 
   setDisplay: (value) => set({ display: value }),
 
-  setLanguage: (lang) => {
-    localStorage.setItem("language", lang);
-    set({ language: lang });
-  },
+  setLanguage: (lang) => { localStorage.setItem("language", lang); 
+  i18n.changeLanguage(lang);
+   set({ language: lang }); },
   
 
   toggleOpen: () => set((state) => ({ isOpen: !state.isOpen })),

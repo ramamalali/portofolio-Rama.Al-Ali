@@ -5,8 +5,10 @@ import { photosLinks } from "#constants";
 import usePhotosgroupStore from "#store/PhotosLocation";
 import clsx from "clsx";
 import useWindowStore from "#store/Window";
+import { useTranslation } from "react-i18next";
 
 const Photos = () => {
+  const {t} = useTranslation();
   const { activePhotosgroup, setActionPhotosgroup } = usePhotosgroupStore();
   const { openWindow } = useWindowStore();
 
@@ -29,7 +31,7 @@ const Photos = () => {
 
       <div className="bg-white flex h-full w-full">
         <div className="sidebar w-50">
-          <h3>Photos</h3>
+          <h3>{("Photos")}</h3>
           <ul>
             {Object.values(photosLinks).map((section) => (
               <li
@@ -40,7 +42,7 @@ const Photos = () => {
                 )}
               >
                 <img src={section.icon} className="w-4" alt={section.title} />
-                <p className="text-sm font-medium truncate">{section.title}</p>
+                <p className="text-sm font-medium truncate">{t(section.title)}</p>
               </li>
          
             ))}
