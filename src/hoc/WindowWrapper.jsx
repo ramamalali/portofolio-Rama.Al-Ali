@@ -10,9 +10,8 @@ import { Draggable } from "gsap/Draggable";
 const WindowWrapper = (Component, windowKey) => {
   const wrapped = (props) => {
     const { focusWindow, windows } = useWindowStore();
-    const { isOpen, zIndex } = windows[windowKey];
+    const { isOpen,  isMinimized, isMaximized, zIndex } = windows[windowKey];
     const ref = useRef();
-
     useGSAP(() => {
       const el = ref.current;
       if (!el || !isOpen) return;
@@ -34,11 +33,14 @@ const WindowWrapper = (Component, windowKey) => {
       const el = ref.current;
       if (!el) return;
 
-      el.style.display = isOpen ? "block" : "none";
-    }, [isOpen]);
+      if (!isOpen || isMinimized) { el.style.display = "none"; } 
+      else { el.style.display = "block"; } },
+       [isOpen, isMinimized]);
+
+ 
 
     return (
-      <section id={windowKey} ref={ref} style={{ zIndex }} className="absolute">
+      <section id={windowKey} ref={ref} style={{ zIndex }} className={isMaximized === true ? "w-full h-full absolute" : "absolute" }>
         <Component {...props} />
       </section>
     );

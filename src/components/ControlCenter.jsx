@@ -40,7 +40,7 @@ const ControlCenter = () => {
   if (!isOpen) return null;
 
   return (
-    <div className="controlcenter">
+    <div className={ language === "en" ? "controlcenter  right-0  left-[78%]" : " controlcenter  right-[55%] left-0"} >
       <div className="control-top-container">
         <div className="control-left ">
           <div className="control-left-icon" onClick={toggleWifi}>

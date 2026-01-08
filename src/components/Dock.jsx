@@ -80,7 +80,7 @@ const Dock = () => {
           <div key={id} className=" flex relative  justify-center">
             <button
               type="button"
-              className="dock-icon"
+              className={ window.isMinimized ? "border-3 dock-icon" : "dock-icon" }
               aria-label={t(name)}
               data-tooltip-id="dock-tooltip"
               data-tooltip-content={t(name)}

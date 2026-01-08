@@ -108,11 +108,11 @@ body {
     }
 
     .minimize {
-      @apply size-3.5 rounded-full bg-[#ffc030];
+      @apply size-3.5 rounded-full bg-[#ffc030] cursor-pointer;
     }
 
     .maximize {
-      @apply size-3.5 rounded-full bg-[#2acb42];
+      @apply size-3.5 rounded-full bg-[#2acb42] cursor-pointer;
     }
   }
 
@@ -211,7 +211,7 @@ body {
   }
 
   #contact {
-    @apply max-w-2xl absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden dark:border-gray-700 dark:bg-gray-900  dark:text-gray-200;
+    @apply  absolute top-60 left-5/12 bg-white shadow-2xl drop-shadow-2xl rounded-xl overflow-hidden dark:border-gray-700 dark:bg-gray-900  dark:text-gray-200;
 
     h2 {
       @apply font-bold text-sm text-center w-full dark:text-gray-200;
@@ -225,7 +225,7 @@ body {
       @apply flex items-center gap-3 dark:text-gray-200;
 
       li {
-        @apply rounded-lg p-3 w-60 hover:-translate-y-0.5 hover:scale-105 origin-center transition-all duration-300 dark:text-gray-200;
+        @apply rounded-lg p-3 w-40 hover:-translate-y-0.5 hover:scale-105 origin-center transition-all duration-300 dark:text-gray-200;
 
         a {
           @apply space-y-5 ;
@@ -397,15 +397,16 @@ body {
   }
 
   #trash {
-    @apply  dark:bg-gray-900  dark:text-gray-200;
+    @apply bg-white dark:bg-gray-900  dark:text-gray-200;
     ul {
-      @apply  dark:bg-gray-900  dark:text-gray-200;
-      li{
-      }
+      @apply  dark:bg-gray-900  dark:text-gray-200 hover:bg-gray-900;
+    
     }
   }
+ 
+ 
   .controlcenter {
-         @apply relative p-4 w-[26%] bg-gray-500/30  z-[9999999999] left-[78%] -translate-x-1/2 top-[1%] rounded-xl dark:bg-gray-800;
+         @apply relative p-4 w-[26%] bg-gray-500/30  z-[9999999999]  -translate-x-1/2 top-[1%] rounded-xl dark:bg-gray-800;
 
     .control-top-container {
            @apply grid grid-flow-col grid-rows-2 gap-4;
@@ -449,4 +450,5 @@ body {
       @apply block w-full cursor-pointer text-left px-4 py-2 rounded-xl text-sm hover:bg-gray-50 dark:text-gray-200 dark:hover:bg-gray-600;
     }
   }
+  
 }
