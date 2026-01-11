@@ -1,4 +1,5 @@
-import {Wifi ,Search ,CircleUser , Settings2 } from "lucide-react"
+import { Wifi ,Search ,CircleUser , Settings2 } from "lucide-react"
+
 
 const navLinks = [ 
   { id: 1, nameKey: "nav.Projects", type: "finder" },

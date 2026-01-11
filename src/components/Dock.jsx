@@ -10,18 +10,23 @@ import { useTranslation } from "react-i18next";
 const Dock = () => {
   const dockRef = useRef(null);
   const {t} = useTranslation();
-  const { openWindow, closeWindow, focusWindow, windows } = useWindowStore();
+  const { openWindow, closeWindow, restoreWindow , focusWindow, windows } = useWindowStore();
+
 
   const toggleApp = (app) => {
     if (!app.canOpen) return;
-
-    const window = windows[app.id];
-    if (window.isOpen) {
-      closeWindow(app.id);
-    } else {
+  
+    const win = windows[app.id];
+  
+    if (!win.isOpen) {
       openWindow(app.id);
+    } else if (win.isMinimized) {
+      restoreWindow(app.id);
+    } else {
+      closeWindow(app.id);
     }
   };
+  
 
   useGSAP(() => {
     const dock = dockRef.current;
@@ -76,11 +81,15 @@ const Dock = () => {
   return (
     <section id="dock">
       <div ref={dockRef} className="dock-container ">
-        {dockApps.map(({ id, name, icon, canOpen }) => (
+        {dockApps.map(({ id, name, icon, canOpen }) => {
+            const win = windows[id]; 
+            return(
           <div key={id} className=" flex relative  justify-center">
             <button
               type="button"
-              className={ window.isMinimized ? "border-3 dock-icon" : "dock-icon" }
+              className={`dock-icon ${
+                win?.isOpen ||dd . win?.isMinimized ? "border border-gray-400 rounded-xl" : ""
+              }`}
               aria-label={t(name)}
               data-tooltip-id="dock-tooltip"
               data-tooltip-content={t(name)}
@@ -95,7 +104,7 @@ const Dock = () => {
               />
             </button>
           </div>
-        ))}
+        )})}
 
         <Tooltip id="dock-tooltip" place="top" className="tooltip" />
       </div>

@@ -1,24 +1,60 @@
-import ControlIcon from "./ControlCenter";
-import { useControlStore } from "#store/ControlStore";
-import {
-  Wifi,
-  Bluetooth,
-  House,
-  Sun,
-  Moon,
-  Keyboard,
-  Airplay,
-  ChevronDown,
+import { 
+  Wifi, 
+  Bluetooth, 
+  House, 
+  Sun, 
+  Moon, 
+  Keyboard, 
+  Airplay, 
+  ChevronDown 
 } from "lucide-react";
+import { useControlStore } from "#store/ControlStore";
 import { useState } from "react";
 
-const ControlCenter = () => {
+
+const getPositionClass = (lang) =>
+  lang === "en" ? "right-0 left-[78%]" : "right-[55%] left-0";
+
+
+const LanguageSelector = ({ language, setLanguage }) => {
   const [open, setOpen] = useState(false);
   const options = [
     { id: "ar", label: "العربية" },
     { id: "en", label: "English" },
   ];
 
+  return (
+    <div className="control-inputs text-left">
+      <button 
+        className="control-language-btn" 
+        onClick={() => setOpen(!open)}
+      >
+        {language === "ar" ? "العربية" : "English"} 
+        <ChevronDown />
+      </button>
+
+      {open && (
+        <div className="control-choose py-1">
+          {options.map((option) => (
+            <button
+              key={option.id}
+              onClick={() => {
+                setLanguage(option.id);
+                setOpen(false);
+              }}
+              className="control-check"
+            >
+              {option.label}
+            </button>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};
+
+
+const ControlCenter = () => {
   const {
     wifi,
     bluetooth,
@@ -39,40 +75,39 @@ const ControlCenter = () => {
 
   if (!isOpen) return null;
 
+  const controlItems = [
+    { id: "wifi", label: "Wifi", icon: Wifi, active: wifi, onClick: toggleWifi },
+    { id: "bluetooth", label: "Bluetooth", icon: Bluetooth, active: bluetooth, onClick: toggleBluetooth },
+    { id: "airDrop", label: "AirDrop", icon: House, active: airDrop, onClick: toggleAirDrop },
+  ];
+
   return (
-    <div className={ language === "en" ? "controlcenter  right-0  left-[78%]" : " controlcenter  right-[55%] left-0"} >
+    <div className={`controlcenter ${getPositionClass(language)}`}>
       <div className="control-top-container">
-        <div className="control-left ">
-          <div className="control-left-icon" onClick={toggleWifi}>
-            <Wifi className={wifi ? "text-sky-400" : ""} />
-            <span>Wifi</span>
-          </div>
-          <div className="control-left-icon" onClick={toggleBluetooth}>
-            <Bluetooth className={bluetooth ? "text-sky-400" : ""} />
-            <span>Bluetooth</span>
-          </div>
-          <div className="control-left-icon" onClick={toggleAirDrop}>
-            <House className={airDrop ? "text-sky-400" : ""} />
-            <span>AirDrop</span>
-          </div>
+        <div className="control-left">
+          {controlItems.map(({ id, label, icon: Icon, active, onClick }) => (
+            <div key={id} className="control-left-icon" onClick={onClick}>
+              <Icon className={active ? "text-sky-400" : ""} />
+              <span>{label}</span>
+            </div>
+          ))}
         </div>
 
-        <div className="control-mode col-2" onClick={() => toggleTheme()}>
+        <div className="control-mode col-2" onClick={toggleTheme}>
           {theme === "light" ? (
             <Sun className="text-sky-400" />
           ) : (
             <Moon className="text-sky-400" />
           )}
-
           <span>Mode</span>
         </div>
 
-        <div className="control-right-button col-2 ">
-          <div className=" control-right-icon">
-            <Keyboard className="m-auto " />
+        <div className="control-right-button col-2">
+          <div className="control-right-icon">
+            <Keyboard className="m-auto" />
             <span>Keyboard</span>
           </div>
-          <div className=" control-right-icon ">
+          <div className="control-right-icon">
             <Airplay className="m-auto" />
             <span>AirPlay</span>
           </div>
@@ -103,29 +138,7 @@ const ControlCenter = () => {
         />
       </div>
 
-      <div className=" control-inputs text-left">
-        <button className="control-language-btn" onClick={() => setOpen(!open)}>
-          {language === "ar" ? "العربية" : "English"}
-          <ChevronDown />
-        </button>
-        {open && (
-          <div className="control-choose">
-            <div className="py-1">
-            {options.map((option) => (
-                <button key={option.id} onClick={() => {
-                    setLanguage(option.id);
-                    setOpen(false);
-                  }}
-                  className="control-check"
-                >
-               {option.label}
-                
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
-      </div>
+      <LanguageSelector language={language} setLanguage={setLanguage} />
     </div>
   );
 };
