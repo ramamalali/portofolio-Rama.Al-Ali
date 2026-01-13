@@ -88,7 +88,7 @@ const Dock = () => {
             <button
               type="button"
               className={`dock-icon ${
-                win?.isOpen ||dd . win?.isMinimized ? "border border-gray-400 rounded-xl" : ""
+                win?.isOpen ||  win?.isMinimized ? "border border-gray-400 rounded-xl" : ""
               }`}
               aria-label={t(name)}
               data-tooltip-id="dock-tooltip"

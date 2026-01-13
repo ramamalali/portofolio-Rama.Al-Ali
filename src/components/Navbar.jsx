@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 const Navbar = () => {
   const {t} = useTranslation();
   const { openWindow  } = useWindowStore();
-  const { toggleOpen , wifi  } = useControlStore();
+  const { toggleOpen , wifi  , isOpen } = useControlStore();
   return (
     <>
       <nav >
@@ -35,7 +35,7 @@ const Navbar = () => {
               }} >
               <Icon 
       className={
-        type === "wifi" && wifi === true
+        type === "wifi" && wifi === true || type === "mode" && isOpen === true
           ? "icon-hover text-sky-400"
           : "icon-hover"}
           

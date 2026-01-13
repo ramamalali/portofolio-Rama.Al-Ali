@@ -10,7 +10,7 @@ const Terminal = () => {
     <>
       <div id="window-header">
        < WindowControlls target="terminal"/>
-        <h2>tech stack</h2>
+        <h2>{t("tech stack")}</h2>
       </div>
       <div className="techstack">
         <p>

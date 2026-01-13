@@ -24,23 +24,19 @@ const LanguageSelector = ({ language, setLanguage }) => {
   ];
 
   return (
-    <div className="control-inputs text-left">
+  
+    <div className="control-inputs text-left group">
       <button 
-        className="control-language-btn" 
-        onClick={() => setOpen(!open)}
-      >
+        className="control-language-btn "  >
         {language === "ar" ? "العربية" : "English"} 
         <ChevronDown />
       </button>
 
-      {open && (
-        <div className="control-choose py-1">
+
+        <div className="control-choose py-1 hidden group-hover:block">
           {options.map((option) => (
-            <button
-              key={option.id}
-              onClick={() => {
-                setLanguage(option.id);
-                setOpen(false);
+            <button key={option.id} onClick={() => {
+              setLanguage(option.id);
               }}
               className="control-check"
             >
@@ -48,7 +44,7 @@ const LanguageSelector = ({ language, setLanguage }) => {
             </button>
           ))}
         </div>
-      )}
+
     </div>
   );
 };
@@ -71,6 +67,7 @@ const ControlCenter = () => {
     setLanguage,
     toggleTheme,
     isOpen,
+    toggleOpen,
   } = useControlStore();
 
   if (!isOpen) return null;
@@ -82,6 +79,7 @@ const ControlCenter = () => {
   ];
 
   return (
+    <div className="w-full h-full bg-transparent" onClick={() => toggleOpen(false)}>
     <div className={`controlcenter ${getPositionClass(language)}`}>
       <div className="control-top-container">
         <div className="control-left">
@@ -139,6 +137,7 @@ const ControlCenter = () => {
       </div>
 
       <LanguageSelector language={language} setLanguage={setLanguage} />
+    </div>
     </div>
   );
 };

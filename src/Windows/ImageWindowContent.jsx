@@ -23,11 +23,7 @@ const ImageWindowContent = () =>{
         </div>
     ): null}
 
-
     </div>
-
-
-
         </>
     )
 }
